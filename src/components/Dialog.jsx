@@ -21,6 +21,9 @@ function Dialog() {
                     <h4 className="font-bold text-lg pt-5">การลบ</h4>
                     <p>สามารถกดลบได้ที่มุมขวาบนของรายวิชา</p>
 
+                    <h4 className="font-bold text-lg pt-5">การคัดลอก</h4>
+                    <p>คลิกที่รายวิชาเพื่อคัดลอกรหัส</p>
+
                     {/* Modal Footer */}
                     <div className="modal-action">
                         <form method="dialog">
