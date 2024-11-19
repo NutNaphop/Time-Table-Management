@@ -1,7 +1,16 @@
+import copy from "copy-to-clipboard";
 import { useEffect } from "react";
 
 // Item Component
 export const ScheduleItem = ({ item, onDelete , day }) => {
+
+  const copyToClipboard = (code) => {
+    let isCopy = copy(code);
+    if (isCopy) {
+      alert("คัดลอกรหัสเรียบร้อย")
+    }
+  };
+
 
     const colors = {
         'MON' : 'bg-yellow-200' ,
@@ -19,8 +28,9 @@ export const ScheduleItem = ({ item, onDelete , day }) => {
     return (
       <div
         className={`p-2 rounded-lg shadow ${
-          item.conflict === true ? "bg-gray-200" : ""
-        } relative ${colors[day]}`}
+          item.conflict  ? "bg-gray-300" : ""
+        } relative ${colors[day]} cursor-pointer`}
+        onClick={() => copyToClipboard(item.code)}
       >
         <button
           className="absolute top-1 right-1 text-red-600 font-bold"
